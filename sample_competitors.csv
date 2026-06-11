@@ -1,0 +1,156 @@
+first_name,last_name,ata_number,age_group,rank
+Maya,Chen,300001,Youth 7-8,1st Degree
+Liam,Anderson,300002,Youth 11-12,1st Degree
+Sofia,Walker,300003,Teen 15-17,1st Degree
+Noah,Foster,300004,Teen 13-14,2nd Degree
+Ava,Peterson,300005,Adult 18-29,2nd Degree
+Ethan,Cook,300006,Adult 40-49,2nd Degree
+Isabella,Brooks,300007,Adult 60-69,2nd Degree
+Lucas,Garcia,300008,Adult 40-49,3rd Degree
+Mia,Young,300009,Adult 60-69,3rd Degree
+Oliver,Bryant,300010,Youth 7-8,3rd Degree
+Emma,Murphy,300011,Youth 11-12,3rd Degree
+James,Patel,300012,Teen 15-17,3rd Degree
+Harper,Kim,300013,Youth 9-10,4th Degree
+Benjamin,Davis,300014,Teen 13-14,4th Degree
+Amelia,Bennett,300015,Adult 18-29,4th Degree
+Elijah,Ward,300016,Adult 40-49,4th Degree
+Charlotte,Turner,300017,Adult 60-69,4th Degree
+Henry,Kim,300018,Youth 7-8,4th Degree
+Luna,Nguyen,300019,Adult 40-49,5th Degree
+Daniel,Robinson,300020,Adult 60-69,5th Degree
+Nora,Price,300021,Youth 7-8,5th Degree
+Miles,Hayes,300022,Youth 11-12,5th Degree
+Caleb,Morgan,300023,Teen 15-17,5th Degree
+Leah,Nguyen,300024,Adult 30-39,5th Degree
+Zoe,Robinson,300025,Adult 50-59,5th Degree
+Owen,Hernandez,300026,Teen 13-14,6th Degree
+Isaac,Coleman,300027,Adult 18-29,6th Degree
+Mila,Ross,300028,Adult 40-49,6th Degree
+Ruby,Bailey,300029,Adult 60-69,6th Degree
+Eli,Martin,300030,Youth 7-8,6th Degree
+Victoria,Hernandez,300031,Youth 11-12,6th Degree
+Jonah,Coleman,300032,Teen 15-17,6th Degree
+Naomi,Ross,300033,Adult 30-39,6th Degree
+Adrian,Ross,300034,Youth 7-8,7th Degree
+Clara,Bailey,300035,Youth 11-12,7th Degree
+Simon,Martin,300036,Teen 15-17,7th Degree
+Elena,Hernandez,300037,Adult 30-39,7th Degree
+Marcus,Coleman,300038,Adult 50-59,7th Degree
+Tessa,Ross,300039,Adult 70-79,7th Degree
+Graham,Bailey,300040,Youth 9-10,7th Degree
+Maya,Martin,300041,Teen 13-14,7th Degree
+Liam,Hernandez,300042,Adult 18-29,7th Degree
+Sofia,Robinson,300043,Adult 60-69,8th Degree
+Noah,Price,300044,Youth 7-8,8th Degree
+Ava,Hayes,300045,Youth 11-12,8th Degree
+Ethan,Morgan,300046,Teen 15-17,8th Degree
+Isabella,Nguyen,300047,Adult 30-39,8th Degree
+Lucas,Robinson,300048,Adult 50-59,8th Degree
+Mia,Price,300049,Adult 70-79,8th Degree
+Oliver,Hayes,300050,Youth 9-10,8th Degree
+Emma,Morgan,300051,Teen 13-14,8th Degree
+James,Nguyen,300052,Adult 18-29,8th Degree
+Harper,Kim,300053,Adult 50-59,9th Degree
+Benjamin,Davis,300054,Adult 70-79,9th Degree
+Amelia,Bennett,300055,Youth 9-10,9th Degree
+Elijah,Ward,300056,Teen 13-14,9th Degree
+Charlotte,Turner,300057,Adult 18-29,9th Degree
+Henry,Kim,300058,Adult 40-49,9th Degree
+Luna,Davis,300059,Adult 60-69,9th Degree
+Daniel,Bennett,300060,Youth 7-8,9th Degree
+Nora,Ward,300061,Youth 11-12,9th Degree
+Miles,Turner,300062,Teen 15-17,9th Degree
+Caleb,Kim,300063,Adult 30-39,9th Degree
+Leah,Patel,300064,Adult 50-59,White
+Zoe,Garcia,300065,Adult 70-79,White
+Owen,Young,300066,Youth 9-10,White
+Isaac,Bryant,300067,Teen 13-14,White
+Mila,Murphy,300068,Adult 18-29,White
+Ruby,Patel,300069,Adult 40-49,White
+Eli,Garcia,300070,Adult 60-69,White
+Victoria,Young,300071,Youth 7-8,White
+Jonah,Bryant,300072,Youth 11-12,White
+Naomi,Murphy,300073,Teen 15-17,White
+Adrian,Patel,300074,Adult 30-39,White
+Clara,Garcia,300075,Adult 50-59,White
+Simon,Brooks,300076,Adult 60-69,Orange
+Elena,Lee,300077,Youth 7-8,Orange
+Marcus,Foster,300078,Youth 11-12,Orange
+Tessa,Peterson,300079,Teen 15-17,Orange
+Graham,Cook,300080,Adult 30-39,Orange
+Maya,Brooks,300081,Adult 50-59,Orange
+Liam,Lee,300082,Adult 70-79,Orange
+Sofia,Foster,300083,Youth 9-10,Orange
+Noah,Peterson,300084,Teen 13-14,Orange
+Ava,Cook,300085,Adult 18-29,Orange
+Ethan,Brooks,300086,Adult 40-49,Orange
+Isabella,Lee,300087,Adult 60-69,Orange
+Lucas,Foster,300088,Youth 7-8,Orange
+Mia,Walker,300089,Youth 7-8,Yellow
+Oliver,Sanders,300090,Youth 11-12,Yellow
+Emma,Cooper,300091,Teen 15-17,Yellow
+James,Chen,300092,Adult 30-39,Yellow
+Harper,Anderson,300093,Adult 50-59,Yellow
+Benjamin,Walker,300094,Adult 70-79,Yellow
+Amelia,Sanders,300095,Youth 9-10,Yellow
+Elijah,Cooper,300096,Teen 13-14,Yellow
+Charlotte,Chen,300097,Adult 18-29,Yellow
+Henry,Anderson,300098,Adult 40-49,Yellow
+Luna,Walker,300099,Adult 60-69,Yellow
+Daniel,Sanders,300100,Youth 7-8,Yellow
+Nora,Cooper,300101,Youth 11-12,Yellow
+Miles,Chen,300102,Teen 15-17,Yellow
+Caleb,Bell,300103,Teen 13-14,Camo
+Leah,Ramirez,300104,Adult 18-29,Camo
+Zoe,Thompson,300105,Adult 40-49,Camo
+Owen,Allen,300106,Adult 60-69,Camo
+Isaac,Reed,300107,Youth 7-8,Camo
+Mila,Bell,300108,Youth 11-12,Camo
+Ruby,Ramirez,300109,Teen 15-17,Camo
+Eli,Thompson,300110,Adult 30-39,Camo
+Victoria,Allen,300111,Adult 50-59,Camo
+Jonah,Reed,300112,Adult 70-79,Camo
+Naomi,Bell,300113,Youth 9-10,Camo
+Adrian,Ramirez,300114,Teen 13-14,Camo
+Clara,Thompson,300115,Adult 18-29,Camo
+Simon,Allen,300116,Adult 40-49,Camo
+Elena,Reed,300117,Adult 60-69,Camo
+Marcus,Wright,300118,Adult 40-49,Green
+Tessa,Howard,300119,Adult 60-69,Green
+Graham,Rivera,300120,Youth 7-8,Green
+Maya,Johnson,300121,Youth 11-12,Green
+Liam,Wilson,300122,Teen 15-17,Green
+Sofia,Wright,300123,Adult 30-39,Green
+Noah,Howard,300124,Adult 50-59,Green
+Ava,Rivera,300125,Adult 70-79,Green
+Ethan,Johnson,300126,Youth 9-10,Green
+Isabella,Wilson,300127,Teen 13-14,Green
+Lucas,Wright,300128,Adult 18-29,Green
+Mia,Howard,300129,Adult 40-49,Green
+Oliver,Rivera,300130,Adult 60-69,Green
+Emma,Johnson,300131,Youth 7-8,Green
+James,Wilson,300132,Youth 11-12,Green
+Harper,Wright,300133,Teen 15-17,Green
+Benjamin,Wilson,300134,Youth 9-10,Purple
+Amelia,Wright,300135,Teen 13-14,Purple
+Elijah,Howard,300136,Adult 18-29,Purple
+Charlotte,Rivera,300137,Adult 40-49,Purple
+Henry,Bailey,300138,Adult 18-29,Blue
+Luna,Martin,300139,Adult 40-49,Blue
+Daniel,Hernandez,300140,Adult 60-69,Blue
+Nora,Coleman,300141,Youth 7-8,Blue
+Miles,Ross,300142,Youth 11-12,Blue
+Caleb,Bell,300143,Adult 70-79,Brown
+Leah,Ramirez,300144,Youth 9-10,Brown
+Zoe,Thompson,300145,Teen 13-14,Brown
+Owen,Allen,300146,Adult 18-29,Brown
+Isaac,Reed,300147,Adult 40-49,Brown
+Mila,Bell,300148,Adult 60-69,Brown
+Ruby,Turner,300149,Adult 18-29,Red
+Eli,Kim,300150,Adult 40-49,Red
+Victoria,Davis,300151,Adult 60-69,Red
+Jonah,Bennett,300152,Youth 7-8,Red
+Naomi,Ward,300153,Youth 11-12,Red
+Adrian,Turner,300154,Teen 15-17,Red
+Clara,Kim,300155,Adult 30-39,Red

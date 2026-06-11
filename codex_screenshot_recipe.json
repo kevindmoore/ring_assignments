@@ -1,0 +1,27 @@
+{
+  "routes": {},
+  "homeScreens": [
+    {
+      "name": "01_competitors",
+      "steps": []
+    },
+    {
+      "name": "02_judges",
+      "steps": [
+        { "action": "tapText", "text": "Judges" }
+      ]
+    },
+    {
+      "name": "03_rings",
+      "steps": [
+        { "action": "tapText", "text": "Rings" }
+      ]
+    },
+    {
+      "name": "04_assignments",
+      "steps": [
+        { "action": "tapText", "text": "Assignments" }
+      ]
+    }
+  ]
+}
