@@ -787,22 +787,35 @@ class _CompetitorsPageState extends State<CompetitorsPage> {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
-            OutlinedButton.icon(
-              onPressed: _importCsv,
-              icon: const Icon(Icons.upload_file_outlined),
-              label: const Text('Import CSV'),
-            ),
-            const SizedBox(width: 8),
-            OutlinedButton.icon(
-              onPressed: competitors.isEmpty ? null : _clearAllCompetitors,
-              icon: const Icon(Icons.delete_sweep_outlined),
-              label: const Text('Clear All'),
-            ),
-            const SizedBox(width: 8),
-            IconButton(
-              onPressed: _showCompetitorEditor,
-              tooltip: 'Add competitor',
-              icon: const Icon(Icons.person_add_alt_1_outlined),
+            Flexible(
+              child: SingleChildScrollView(
+                reverse: true,
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    OutlinedButton.icon(
+                      onPressed: _importCsv,
+                      icon: const Icon(Icons.upload_file_outlined),
+                      label: const Text('Import CSV'),
+                    ),
+                    const SizedBox(width: 8),
+                    OutlinedButton.icon(
+                      onPressed: competitors.isEmpty
+                          ? null
+                          : _clearAllCompetitors,
+                      icon: const Icon(Icons.delete_sweep_outlined),
+                      label: const Text('Clear All'),
+                    ),
+                    const SizedBox(width: 8),
+                    IconButton(
+                      onPressed: _showCompetitorEditor,
+                      tooltip: 'Add competitor',
+                      icon: const Icon(Icons.person_add_alt_1_outlined),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
