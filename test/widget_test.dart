@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:ring_assignments/assignment_engine.dart';
 import 'package:ring_assignments/assignment_store.dart';
@@ -243,7 +244,7 @@ void main() {
       generatedManualAssignmentsSignal.value = const [];
       ringCountSignal.value = 4;
 
-      await tester.pumpWidget(const MyApp());
+      await tester.pumpWidget(const RingAssignmentsApp());
       await tester.pumpAndSettle();
 
       expect(find.text('Ring Assignments'), findsNothing);
@@ -265,6 +266,30 @@ void main() {
       expect(find.text('No center judges available'), findsOneWidget);
     },
   );
+
+  testWidgets('welcome intro is dismissed permanently after getting started', (
+    tester,
+  ) async {
+    SharedPreferences.setMockInitialValues({});
+
+    await tester.pumpWidget(const RingAssignmentsApp());
+    await tester.pumpAndSettle();
+
+    expect(find.text('Welcome to Ring Assignments'), findsOneWidget);
+    expect(
+      find.text('1. Add competitors by CSV or individually.'),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.text('Get started'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Welcome to Ring Assignments'), findsNothing);
+    expect(
+      (await SharedPreferences.getInstance()).getBool('welcome_intro_seen'),
+      isTrue,
+    );
+  });
 
   testWidgets('assignment screen generates rings by competitor rank', (
     tester,
@@ -293,7 +318,7 @@ void main() {
     ringCountSignal.value = 4;
     rankOrderSignal.value = BeltRank.values;
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Assignments'));
@@ -340,7 +365,7 @@ void main() {
       ringCountSignal.value = 4;
       rankOrderSignal.value = BeltRank.values;
 
-      await tester.pumpWidget(const MyApp());
+      await tester.pumpWidget(const RingAssignmentsApp());
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Assignments'));
@@ -509,7 +534,7 @@ void main() {
     generatedManualAssignmentsSignal.value = const [];
     ringCountSignal.value = 4;
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Rings'));
@@ -792,7 +817,7 @@ void main() {
       ),
     ];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Assignments'));
@@ -845,7 +870,7 @@ void main() {
         ),
       ];
 
-      await tester.pumpWidget(const MyApp());
+      await tester.pumpWidget(const RingAssignmentsApp());
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Assignments'));
@@ -894,7 +919,7 @@ void main() {
         ),
       ];
 
-      await tester.pumpWidget(const MyApp());
+      await tester.pumpWidget(const RingAssignmentsApp());
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Assignments'));
@@ -943,7 +968,7 @@ void main() {
         ),
       ];
 
-      await tester.pumpWidget(const MyApp());
+      await tester.pumpWidget(const RingAssignmentsApp());
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Assignments'));
@@ -994,7 +1019,7 @@ void main() {
       ),
     ];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Assignments'));
@@ -1028,7 +1053,7 @@ void main() {
     judgesSignal.value = const [];
     generatedManualAssignmentsSignal.value = const [];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Assignments'));
@@ -1068,7 +1093,7 @@ void main() {
       ),
     ];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Assignments'));
@@ -1145,7 +1170,7 @@ void main() {
       ),
     ];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Assignments'));
@@ -1171,7 +1196,7 @@ void main() {
   testWidgets('judges screen adds and edits a judge', (tester) async {
     judgesSignal.value = const [];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Judges'));
@@ -1237,7 +1262,7 @@ void main() {
     ];
     generatedManualAssignmentsSignal.value = const [];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Judges'));
@@ -1278,7 +1303,7 @@ void main() {
       ),
     ];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Judges'));
@@ -1307,7 +1332,7 @@ void main() {
     ];
     generatedManualAssignmentsSignal.value = const [];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Delete Competitor'));
@@ -1342,7 +1367,7 @@ void main() {
       ),
     ];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.widgetWithText(OutlinedButton, 'Clear All'));
@@ -1363,7 +1388,7 @@ void main() {
       BeltRank.white,
     ];
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Rings'));
@@ -1393,7 +1418,7 @@ void main() {
   ) async {
     ringCountSignal.value = 4;
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const RingAssignmentsApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Rings'));

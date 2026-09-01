@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:signals/signals.dart';
 
 import 'app_router.gr.dart';
 import 'assignment_engine.dart';
@@ -10,10 +12,82 @@ import 'assignment_store.dart';
 import 'domain.dart';
 import 'features/speech/application/speech_controller.dart';
 import 'features/speech/presentation/speech_mic_button.dart';
+import 'signals/embedded_signal.dart';
 
 @RoutePage()
-class AssignmentShellPage extends StatelessWidget {
+class AssignmentShellPage extends StatefulWidget {
   const AssignmentShellPage({super.key});
+
+  @override
+  State<AssignmentShellPage> createState() => _AssignmentShellPageState();
+}
+
+class _AssignmentShellPageState extends State<AssignmentShellPage> {
+  static const _welcomeIntroSeenKey = 'welcome_intro_seen';
+  Function? _embeddedEffectDispose;
+
+  @override
+  void initState() {
+    super.initState();
+    _embeddedEffectDispose = effect(() {
+      if (!embeddedSignal.value) {
+        _showWelcomeIntro();
+      }
+    });
+  }
+
+  Future<void> _showWelcomeIntro() async {
+    if (embeddedSignal.value) {
+      return;
+    }
+
+    try {
+      final preferences = await SharedPreferences.getInstance();
+      if (preferences.getBool(_welcomeIntroSeenKey) ?? false) {
+        return;
+      }
+
+      await WidgetsBinding.instance.endOfFrame;
+      if (!mounted) {
+        return;
+      }
+
+      await showDialog<void>(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => AlertDialog(
+          title: const Text('Welcome to Ring Assignments'),
+          content: const Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Set up your tournament in four quick steps:'),
+              SizedBox(height: 12),
+              Text('1. Add competitors by CSV or individually.'),
+              Text('2. Add judges and mark their qualifications.'),
+              Text('3. Set the number of rings and rank order.'),
+              Text('4. Generate, review, and display assignments.'),
+            ],
+          ),
+          actions: [
+            FilledButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('Get started'),
+            ),
+          ],
+        ),
+      );
+      await preferences.setBool(_welcomeIntroSeenKey, true);
+    } catch (_) {
+      // Continue without onboarding if local preferences are unavailable.
+    }
+  }
+
+  @override
+  void dispose() {
+    _embeddedEffectDispose?.call();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

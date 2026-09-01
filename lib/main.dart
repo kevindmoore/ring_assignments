@@ -4,6 +4,7 @@ import 'package:lumberdash/lumberdash.dart';
 import 'package:colorize_lumberdash/colorize_lumberdash.dart';
 
 import 'app_router.dart';
+import 'signals/embedded_signal.dart';
 
 final _appRouter = AppRouter();
 
@@ -11,14 +12,17 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SignalsObserver.instance = null;
   putLumberdashToWork(withClients: [ColorizeLumberdash()]);
-  runApp(const MyApp());
+  runApp(const RingAssignmentsApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class RingAssignmentsApp extends StatelessWidget {
+  const RingAssignmentsApp({super.key, this.embedded = false});
+
+  final bool embedded;
 
   @override
   Widget build(BuildContext context) {
+    embeddedSignal.value = embedded;
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Ring Assignments',
